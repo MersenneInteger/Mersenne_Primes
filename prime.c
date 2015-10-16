@@ -17,8 +17,7 @@ int main(int argc, char *argv[]){
 	       		break;
 	       	}
        	}
-	//if i & j are equal and not equal to 2
-       	if((i == j && i != 2)){ //j is a prime
+       	if((i == j && i != 2)){ //test for prime
 	  for(k = 2; k < 10; k++){ //test for mersenne property
 	    if(power(2, k)-1 == j) //if 2^n-1 == j
 	      printf("%d ", j); //j is a mersenne prime
