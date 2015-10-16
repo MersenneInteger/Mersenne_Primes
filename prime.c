@@ -1,26 +1,33 @@
+//This program finds and prints mersenne primes
+
 #include <stdio.h>
 
+//custom power function, pow is too unstable
 int power(int base, int exponent);
 
-void main(){
+int main(int argc, char *argv[]){
 
   int i,j,k;
- 
+  //outer loop iterates to 100
   for(j = 2; j < 100; j++){	
        	int i = 2;
+	//inner loop checks each number and whether i is a factor of j
        	for(; i <= j-1; i++){
 	       	if(j % i == 0){
 	       		break;
 	       	}
        	}
-       	if((i == j && i != 2)){
-	   for(k = 2; k < 10; k++){
-	    if(power(2, k)-1 == j)
-	      printf("%d ", j);
+	//if i & j are equal and not equal to 2
+       	if((i == j && i != 2)){ //j is a prime
+	  for(k = 2; k < 10; k++){ //test for mersenne property
+	    if(power(2, k)-1 == j) //if 2^n-1 == j
+	      printf("%d ", j); //j is a mersenne prime
 	     }
        }
    }
+  return 0;
 }
+//power function
 int power(int base, int exponent){
 
   int ans = 1;
