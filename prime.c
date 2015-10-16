@@ -8,8 +8,8 @@ int power(int base, int exponent);
 int main(int argc, char *argv[]){
 
   int i,j,k;
-  //outer loop iterates to 100
-  for(j = 2; j < 100; j++){	
+  //outer loop iterates to 10000
+  for(j = 2; j < 10000; j++){	
        	int i = 2;
 	//inner loop checks each number and whether i is a factor of j
        	for(; i <= j-1; i++){
@@ -17,8 +17,8 @@ int main(int argc, char *argv[]){
 	       		break;
 	       	}
        	}
-       	if((i == j && i != 2)){ //test for prime
-	  for(k = 2; k < 10; k++){ //test for mersenne property
+       	if((i == j && i != 2)){ //test if j is prime
+	  for(k = 2; k < 14; k++){ //test for mersenne property
 	    if(power(2, k)-1 == j) //if 2^n-1 == j
 	      printf("%d ", j); //j is a mersenne prime
 	     }
